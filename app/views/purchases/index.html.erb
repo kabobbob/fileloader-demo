@@ -1,0 +1,15 @@
+<div class="row">
+  <%= form_for @purchase_file do |f| %>
+    <%= f.file_field "file"  %>
+    </br>
+    <%= f.submit "Submit" %>
+  <% end %>
+</div>
+<div class="row">
+  Previously uploaded files:
+  </br>
+  <% @purchase_files.each do |f| %>
+    <%= link_to "#{f.file_file_name} (#{f.file_updated_at})", purchase_file_path(f) %>
+    <br>
+  <% end %>
+</div>

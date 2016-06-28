@@ -1,0 +1,21 @@
+<table class="table table-border">
+  <% @rows.each_with_index do |row, i| %>
+    <% if i == 0 %>
+      <thead>
+        <tr>
+          <% row.each do |title| %>
+            <th><%= title %></th>
+          <% end %>
+        </tr>
+      </thead>
+    <% else %>
+      <tbody>
+        <tr>
+          <% row.each do |value| %>
+            <td><%= value %></td>
+          <% end %>
+        </tr>
+      </tbody>
+    <% end %>
+  <% end %>
+</table>
